@@ -1,6 +1,3 @@
-Sure! Here's a `README.md` file explaining each file in the project:
-
----
 
 # Inventory Management System
 
@@ -59,10 +56,4 @@ To run the project locally, follow these steps:
 2. Install dependencies: `npm install`
 3. Start the development server: `npm start`
 
-## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-Feel free to customize this `README.md` file to include any additional information or instructions specific to your project.
