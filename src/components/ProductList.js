@@ -2,11 +2,11 @@
 
 import React, {useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchInventory } from '../InventorySlice';
+import { fetchInventory } from '../redux/InventorySlice';
 import PropTypes from 'prop-types';
 import Product from './Product';
 import { Table, TableHead, TableRow, TableCell, TableBody } from '@mui/material';
-import './Views.scss'; 
+import '../styles/Views.scss'; 
 
 
 function ProductList({ view }) {

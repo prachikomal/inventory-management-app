@@ -2,7 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Switch from '@mui/material/Switch';
-import './Views.scss'; 
+import '../styles/Views.scss'; 
 
 
 function Navbar({ onViewChange }) {

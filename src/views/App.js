@@ -1,12 +1,10 @@
-// App.js
 import React, { useState, useEffect } from 'react';
-import Navbar from './components/Navbar';
-import InventoryStats from './components/InventoryStats';
-import ProductList from './components/ProductList';
-import './components/Views.scss'; 
+import Navbar from '../components/Navbar';
+import InventoryStats from '../components/InventoryStats';
+import ProductList from '../components/ProductList';
+import '../styles/Views.scss';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchInventory } from './InventorySlice';
-
+import { fetchInventory } from '../redux/InventorySlice';
 
 function App() {
   const dispatch = useDispatch();
@@ -17,22 +15,24 @@ function App() {
     setView(newView);
   };
 
-
   useEffect(() => {
     dispatch(fetchInventory());
   }, [dispatch]);
 
+  // Import utility functions from helpers.js
+  const { calculateTotalStoreValue, calculateOutOfStocks, calculateDistinctQuantities, calculateTotalProducts } = require('../utils/helpers');
+
   // Calculate total store value
-  const totalStoreValue = products.reduce((total, item) => total + Number(item.value.slice(1)), 0);
+  const totalStoreValue = calculateTotalStoreValue(products);
 
   // Calculate out of stocks
-  const outOfStocks = products.filter(item => item.quantity === 0).length;
+  const outOfStocks = calculateOutOfStocks(products);
 
   // Calculate number of distinct quantities
-  const distinctQuantities = [...new Set(products.map(item => item.quantity))].length;
+  const distinctQuantities = calculateDistinctQuantities(products);
 
-  //Calculate total products
-  const totalProduct = products.length;
+  // Calculate total products
+  const totalProduct = calculateTotalProducts(products);
 
   return (
     <div className="admin-container">
@@ -48,10 +48,4 @@ function App() {
   );
 }
 
-App.propTypes = {};
-
-App.defaultProps = {};
-
 export default App;
-
-

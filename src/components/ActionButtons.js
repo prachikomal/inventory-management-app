@@ -5,7 +5,7 @@ import { IconButton } from '@mui/material';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
-import './Views.scss'; 
+import '../styles/Views.scss'; 
 
 function ActionButtons({ view, onDelete, onToggle, onEdit,check }) {
 

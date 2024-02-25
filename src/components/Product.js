@@ -3,9 +3,9 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import ActionButtons from './ActionButtons';
 import { TableRow, TableCell } from '@mui/material';
-import './Views.scss'; 
+import '../styles/Views.scss'; 
 import { useDispatch } from 'react-redux';
-import { deleteProduct, updateProduct, toggleProduct } from '../InventorySlice';
+import { deleteProduct, updateProduct, toggleProduct } from '../redux/InventorySlice';
 import EditProductModal from './EditProductModal'; 
 
 function Product({ data, view }) {
