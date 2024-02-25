@@ -1,0 +1,162 @@
+
+
+.admin-container {
+    background-color:#161718;
+    color: white;
+    padding: 20px;
+  }
+
+
+  
+  .admin-container {
+    .inventory-stats {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+  
+      h1 {
+        font-size: 24px;
+        color: #fff;
+      }
+  
+      .stat-card {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; 
+        justify-content: flex-start; 
+        background-color:#243325;
+        color: #fff;
+        padding: 10px;
+        margin: 10px;
+        border-radius: 5px;
+        width:100%;
+        img {
+          width: 50px;
+          height: 50px;
+          margin-right: 10px; 
+        }
+  
+        .title {
+          font-size: 214x;
+        }
+  
+        .value {
+          font-size: 25px;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+  
+  
+  .product-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #252527;
+    color: #fff; 
+    border-radius: 12px;
+    .inactive {
+      color:rgb(142, 138, 138)
+    }
+    td {
+      padding: 10px;
+      color: #fff;
+      border-bottom: 1px solid #7b7b7b;
+       
+    }
+  
+    th {
+      text-align: left;
+      color:#7f8c4a;
+      border-bottom: 1px solid #7b7b7b;
+      background-color: #252527;
+
+      
+    }
+    
+  
+    td {
+      text-align: left;
+    }
+    
+    .actions {
+      display: flex;
+      justify-content:left;
+  
+      button {
+        margin-right: 10px;
+      }
+    }
+  }
+  
+ 
+.dialog {
+  .MuiPaper-root {
+    background-color: #292B27;
+    color: #fff; 
+  }
+}
+.dialog{
+  
+
+  .text-field {
+    .MuiInputBase-root {
+  
+      background-color: #3F413D;
+      border-radius: 4px; 
+    }
+    .MuiInput-input {
+      color: #fff; 
+      margin-left: 10px;
+    }
+    .MuiFormLabel-root { 
+      color: #fff; 
+    }
+   
+  }
+  
+
+}
+.dialog-title {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #fdfdfd;
+  margin-bottom: 1em;
+  text-align: left;
+}
+
+.dialog-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+
+
+.dialog-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1em;
+}
+
+.button {
+  width: 45%;
+  color:#7f8c4a !important
+}
+
+.editIcon {
+  color: #7f8c4a
+}
+.deleteIcon {
+  color: #b42424
+}
+.visibilityIcon {
+  color: purple
+}
+
+.action-button.disabled {
+  // Define styles for disabled action buttons here
+  opacity: 0.5; // Example: reduce opacity for disabled buttons
+}
