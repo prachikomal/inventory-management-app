@@ -12,7 +12,7 @@ function App() {
   const products = useSelector((state) => state.inventory.items);
   const status = useSelector((state) => state.inventory.status);
   const [view, setView] = useState('user'); // 'user' or 'admin'
-  const [value, setValue] = useState(0); // Initialize value state
+  const [value, setValue] = useState(0);
 
   const handleViewChange = (newView) => {
     setView(newView);
@@ -43,7 +43,7 @@ function App() {
         <Navbar onViewChange={handleViewChange} />
         <InventoryStats
           totalProduct={totalProduct}
-          totalStoreValue={value} // Use the calculated value state here
+          totalStoreValue={value} 
           outOfStocks={outOfStocks}
           distinctQuantities={distinctQuantities}
         />
