@@ -1,14 +1,14 @@
-
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import { IconButton } from '@mui/material';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import '../styles/Views.scss'; 
+import { InventoryContext } from '../redux/Context';
 
-function ActionButtons({ view, onDelete, onToggle, onEdit,check }) {
-
+function ActionButtons({ onDelete, onToggle, onEdit, check }) {
+  const { view } = useContext(InventoryContext);
   const disabled = (view === 'user' || check );
 
   return (
@@ -27,10 +27,10 @@ function ActionButtons({ view, onDelete, onToggle, onEdit,check }) {
 }
 
 ActionButtons.propTypes = {
-  view: PropTypes.string.isRequired,
   onDelete: PropTypes.func.isRequired,
   onToggle: PropTypes.func.isRequired,
   onEdit: PropTypes.func.isRequired,
+  check: PropTypes.bool.isRequired,
 };
 
 ActionButtons.defaultProps = {};

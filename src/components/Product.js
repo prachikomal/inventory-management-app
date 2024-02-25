@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import ActionButtons from './ActionButtons';
@@ -8,7 +7,7 @@ import { useDispatch } from 'react-redux';
 import { deleteProduct, updateProduct, toggleProduct } from '../redux/InventorySlice';
 import EditProductModal from './EditProductModal'; 
 
-function Product({ data, view }) {
+function Product({ data }) {
   const dispatch = useDispatch();
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
   const [check,setCheck]=useState(false);
@@ -31,16 +30,14 @@ function Product({ data, view }) {
     setIsEditModalOpen(false);
   };
 
-  
-
   return (
     <TableRow>
       <TableCell className={check? "inactive":""}>{data.name}</TableCell>
       <TableCell className={check? "inactive":""}>{data.price}</TableCell>
       <TableCell className={check? "inactive":""}>{data.quantity}</TableCell>
-      <TableCell className={check? "inactive":""}>{data.value}</TableCell>
+      <TableCell className={check? "inactive":""}>{data.price.slice(1)*data.quantity}</TableCell>
       <TableCell className="actions">
-        <ActionButtons view={view} onDelete={handleDelete} onToggle={handleToggle} onEdit={handleEdit} check={check} />
+        <ActionButtons onDelete={handleDelete} onToggle={handleToggle} onEdit={handleEdit} check={check} />
         {isEditModalOpen && <EditProductModal product={data} onSave={handleSave} onClose={() => setIsEditModalOpen(false)} />}
       </TableCell>
     </TableRow>
@@ -53,7 +50,6 @@ Product.propTypes = {
     price: PropTypes.string,
     quantity: PropTypes.number,
   }).isRequired,
-  view: PropTypes.string.isRequired,
 };
 
 Product.defaultProps = {};

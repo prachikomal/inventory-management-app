@@ -10,7 +10,7 @@ function InventoryStats({
   totalProduct,
   totalStoreValue,
   outOfStocks,
-  distinctQuantities,
+  distinctQuantities
 }) {
   return (
     <>

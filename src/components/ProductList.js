@@ -1,21 +1,19 @@
+import React, { useContext } from 'react';
+import Product from "./Product";
+import {
+  Table,
+  TableHead,
+  TableRow,
+  TableCell,
+  TableBody,
+} from "@mui/material";
+import "../styles/Views.scss";
+import CircularProgress from "@mui/material/CircularProgress";
+import Box from "@mui/material/Box";
+import { InventoryContext } from '../redux/Context';
 
-
-import React, {useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { fetchInventory } from '../redux/InventorySlice';
-import PropTypes from 'prop-types';
-import Product from './Product';
-import { Table, TableHead, TableRow, TableCell, TableBody } from '@mui/material';
-import '../styles/Views.scss'; 
-
-
-function ProductList({ view }) {
-  const dispatch = useDispatch();
-  const products = useSelector((state) => state.inventory.items);
-
-  useEffect(() => {
-    dispatch(fetchInventory());
-  }, [dispatch]);
+function ProductList() {
+  const { products, status } = useContext(InventoryContext);
 
   return (
     <Table className="product-table">
@@ -29,17 +27,30 @@ function ProductList({ view }) {
         </TableRow>
       </TableHead>
       <TableBody>
-        {products.map((product) => (
-          <Product key={product.name} data={product} view={view} />
-        ))}
+        {status === "loading" ? (
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+              marginLeft: "50vw",
+            }}
+          >
+            <p>Loading... </p>
+
+            <CircularProgress />
+          </Box>
+        ) : (
+          products.map((product) => (
+            <Product key={product.name} data={product} />
+          ))
+        )}
       </TableBody>
     </Table>
   );
 }
 
-ProductList.propTypes = {
-  view: PropTypes.string.isRequired,
-};
+ProductList.propTypes = {};
 
 ProductList.defaultProps = {};
 
