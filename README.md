@@ -1,70 +1,68 @@
-# Getting Started with Create React App
+Sure! Here's a `README.md` file explaining each file in the project:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+---
 
-## Available Scripts
+# Inventory Management System
 
-In the project directory, you can run:
+This project is an inventory management system built using React and Redux. It allows users to view, edit, and manage inventory items, as well as view statistics related to the inventory.
 
-### `npm start`
+## Project Structure
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The project is structured as follows:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### `src/components`
 
-### `npm test`
+This directory contains React components used throughout the application:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **ActionButtons.js**: Implements action buttons for editing, deleting, and toggling visibility of items.
+- **EditProductModal.js**: Provides a modal for editing product details.
+- **InventoryStats.js**: Displays statistics related to inventory, such as total products, total store value, out-of-stock items, and distinct quantities.
+- **Navbar.js**: Implements a navigation bar for switching between user and admin views.
+- **Product.js**: Represents a single product item with its details and associated action buttons.
+- **ProductList.js**: Displays a list of products fetched from the Redux store, utilizing the Product component.
 
-### `npm run build`
+### `src/redux`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+This directory contains Redux-related logic:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **inventorySlice.js**: Manages inventory-related state, including fetching inventory data asynchronously, deleting products, updating products, and toggling product visibility.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### `src/services`
 
-### `npm run eject`
+This directory contains service functions for making API calls:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- **api.js**: Handles API calls to fetch inventory data from an external source.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### `src/styles`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+This directory contains SCSS files for styling the views:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- **Views.scss**: Defines styles for the views, including the admin container, product table, dialog, buttons, and action icons.
 
-## Learn More
+### `src/utils`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+This directory contains utility functions:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- **helpers.js**: Provides utility functions for calculating statistics related to inventory, such as total store value, out-of-stock items, distinct quantities, and total products.
 
-### Code Splitting
+### `src/views`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+This directory contains the main entry point of the application:
 
-### Analyzing the Bundle Size
+- **App.js**: Serves as the main entry point of the application, rendering the Navbar, InventoryStats, and ProductList components and managing state related to view mode and data fetching.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Usage
 
-### Making a Progressive Web App
+To run the project locally, follow these steps:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+1. Clone the repository: `git clone https://github.com/your-username/inventory-management-system.git`
+2. Install dependencies: `npm install`
+3. Start the development server: `npm start`
 
-### Advanced Configuration
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-### Deployment
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Feel free to customize this `README.md` file to include any additional information or instructions specific to your project.
